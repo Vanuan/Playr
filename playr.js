@@ -118,6 +118,9 @@ function Playr(v_id, v_el){
 
 			this.initEventListeners();
 			this.loadTrackTags();
+            if (this.video.autoplay) {
+                this.video.play();
+            }
 			this.ready = true;
 		};
 		
