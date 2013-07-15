@@ -22,6 +22,8 @@
 	cursor:pointer;
 }
 
+div:focus {outline:none;}
+
 .playr_top_overlay{
 	padding:10px;
 	color:#fff;
