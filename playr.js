@@ -16,7 +16,6 @@ function Playr(v_id, v_el){
 	this.config = {
 		fontSize: '12pt',
 		customFontSize: '12pt',
-		defaultVolume: 0.75, 
 		skipStep: 5, // fast-forward
 		volumeStep: 0.1,
 		subsDelayStep: 0.5,
@@ -81,7 +80,7 @@ function Playr(v_id, v_el){
 				+'<div class="playr_video_container" id="playr_video_container_'+this.video_id+'"></div>'
 				+'<div class="playr_captions" id="playr_captions_'+this.video_id+'"></div>'
 				+'</div>'
-				+'<ul class="playr_controls" id="playr_controls_'+this.video_id+'" role="menubar">'
+				+'<ul class="playr_controls" id="playr_controls_'+this.video_id+'" role="menubar" style="top:-30px">'
 				+'<li><button class="playr_play_btn" id="playr_play_btn_'+this.video_id+'" tabindex="0"><img src="'+this.base64images.play_control+'" id="playr_play_img_'+this.video_id+'" alt="play" /></button></li>'
 				+'<li>'
 					+'<div class="playr_timebar" id="playr_timebar_'+this.video_id+'" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0">'
@@ -94,7 +93,7 @@ function Playr(v_id, v_el){
 				+'</li>'
 				+'<li><span id="playr_video_curpos_'+this.video_id+'" role="timer">00:00</span> / <span id="playr_video_duration_'+this.video_id+'">00:00</span></li>'
 				+'<li><button class="playr_mute_btn" id="playr_mute_btn_'+this.video_id+'" tabindex="0"><img src="'+this.base64images.sound_control+'" class="playr_mute_icon" id="playr_mute_icon_'+this.video_id+'" alt="mute" /></button>'
-					+'<div class="playr_volume_ctrl" id="playr_volume_ctrl_'+this.video_id+'" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="'+this.config.defaultVolume+'" tabindex="0">'
+					+'<div class="playr_volume_ctrl" id="playr_volume_ctrl_'+this.video_id+'" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="'+this.video.volume+'" tabindex="0">'
 						+'<div class="playr_volumebar" id="playr_volumebar_'+this.video_id+'"><div class="playr_volumebar_inner" id="playr_volumebar_inner_'+this.video_id+'"><div class="playr_volumebar_pos"></div></div></div>'
 					+'</div>'
 				+'</li>'
@@ -117,7 +116,6 @@ function Playr(v_id, v_el){
 			document.getElementById('playr_video_container_'+this.video_id).style.height = h+'px';
 			document.getElementById('playr_wrapper_'+this.video_id).style.width = w+'px';
 
-			this.video.volume = this.config.defaultVolume;
 			this.initEventListeners();
 			this.loadTrackTags();
 			this.ready = true;
