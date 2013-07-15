@@ -341,7 +341,7 @@ function Playr(v_id, v_el){
 			}
 		};
 
-        var controlsHeight = 30;
+        var controlsHeight = 0;
 		
 		/**
 		 * Toggle fullscreen
