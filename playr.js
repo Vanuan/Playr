@@ -342,6 +342,8 @@ function Playr(v_id, v_el){
 				document.getElementById('playr_timebar_buffer_'+this.video_id).style.width = cur_width+'px';
 			}
 		};
+
+        var controlsHeight = 30;
 		
 		/**
 		 * Toggle fullscreen
@@ -388,7 +390,7 @@ function Playr(v_id, v_el){
 					wrapper.style.width = '100%';
 					wrapper.style.backgroundColor = '#000000';
 					this.video.style.width = '100%';
-					this.video.style.height = (screen.height - 30)+'px';
+					this.video.style.height = (screen.height - controlsHeight)+'px';
 					document.body.style.overflow = 'hidden';
 				}
 				else{
@@ -401,7 +403,7 @@ function Playr(v_id, v_el){
 					wrapper.style.width = window.innerWidth+'px';
 					wrapper.style.marginLeft = '-'+Math.round(wrapper.offsetWidth / 2)+'px';
 					this.video.style.width = window.innerWidth+'px';
-					this.video.style.height = (window.innerHeight - 30)+'px';
+					this.video.style.height = (window.innerHeight - controlsHeight)+'px';
 					document.body.style.overflow = 'hidden';
 				}
 				this.isFullscreen = true;
@@ -452,11 +454,11 @@ function Playr(v_id, v_el){
 			wrapper.style.height = window.innerHeight+'px';
 			wrapper.style.width = window.innerWidth+'px';
 			this.video.style.width = window.innerWidth+'px';
-			this.video.style.height = (window.innerHeight - 30)+'px';
+			this.video.style.height = (window.innerHeight - controlsHeight)+'px';
 			wrapper.style.marginLeft = '-'+Math.round(wrapper.offsetWidth / 2)+'px';
-			var factor = Math.round((window.innerHeight - 30) / this.fsVideoStyle.height * 100) / 100;
+			var factor = Math.round((window.innerHeight - controlsHeight) / this.fsVideoStyle.height * 100) / 100;
 			document.getElementById('playr_captions_'+this.video_id).style.fontSize = factor + 'em';
-			document.getElementById('playr_video_container_'+this.video_id).style.height = (window.innerHeight-30)+'px';
+			document.getElementById('playr_video_container_'+this.video_id).style.height = (window.innerHeight - controlsHeight)+'px';
 		};
 		
 		/**
@@ -793,7 +795,7 @@ function Playr(v_id, v_el){
 						}
 						
 						if(this.isFullscreen){
-							var factor = Math.round((window.innerHeight - 30) / this.fsVideoStyle.height * 100) / 100;
+							var factor = Math.round((window.innerHeight - controlsHeight) / this.fsVideoStyle.height * 100) / 100;
 							captions_styles.push('font-size:' + Math.round(parseInt(this.config.fontSize)*factor) + 'pt');
 						}
 						else{
