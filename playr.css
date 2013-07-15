@@ -251,9 +251,16 @@
 .playr_volume_ctrl:hover,
 .playr_mute_btn:focus + .playr_volume_ctrl,
 .playr_volume_ctrl:focus{
-	display:block;
+	display:none;
 	opacity:1;
 }
+
+.playr_cc_tracks,
+.playr_captions_btn,
+.playr_mute_btn {
+    display:none !important;
+}
+
 
 .playr_volume_ctrl{
 	display:none;
@@ -272,6 +279,7 @@
 }
 
 .playr_volumebar{
+    display: none;
 	position:relative;
 	height:100px;
 	width:12px;
@@ -285,6 +293,7 @@
 
 .playr_volumebar_inner{
 	position:absolute;
+    display: none;
 	bottom:-1px;
 	left:-1px;
 	width:14px;
@@ -309,6 +318,7 @@
 	border-radius:14px;
 	-webkit-box-shadow: 0 0 5px #333;
 	box-shadow: 0 0 5px #333;
+    display: none;
 }
 
 .playr_controls .playr_captions_btn{
