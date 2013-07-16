@@ -80,7 +80,7 @@ function Playr(v_id, v_el){
 				+'<div class="playr_video_container" id="playr_video_container_'+this.video_id+'"></div>'
 				+'<div class="playr_captions" id="playr_captions_'+this.video_id+'"></div>'
 				+'</div>'
-				+'<ul class="playr_controls" id="playr_controls_'+this.video_id+'" role="menubar" style="top:-30px">'
+				+'<ul class="playr_controls" id="playr_controls_'+this.video_id+'" role="menubar" style="top:-31px">'
 				+'<li><button class="playr_play_btn" id="playr_play_btn_'+this.video_id+'" tabindex="0"><img src="'+this.base64images.play_control+'" id="playr_play_img_'+this.video_id+'" alt="play" /></button></li>'
 				+'<li>'
 					+'<div class="playr_timebar" id="playr_timebar_'+this.video_id+'" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0">'
